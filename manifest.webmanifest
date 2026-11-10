@@ -1,0 +1,16 @@
+{
+  "name": "ಬೆಳೆ-ಬೆಲೆ (Bele-Bele)",
+  "short_name": "ಬೆಳೆ-ಬೆಲೆ",
+  "description": "Vegetable price forecast for farmers and traders",
+  "lang": "kn",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0E3F2A",
+  "theme_color": "#0E3F2A",
+  "icons": [
+    {"src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"},
+    {"src": "icon-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable"}
+  ]
+}
