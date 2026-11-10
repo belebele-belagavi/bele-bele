@@ -1,7 +1,7 @@
 {
   "name": "ಬೆಳೆ-ಬೆಲೆ (Bele-Bele)",
   "short_name": "ಬೆಳೆ-ಬೆಲೆ",
-  "description": "Vegetable price forecast for farmers and traders",
+  "description": "ತರಕಾರಿ ಬೆಲೆ ಮುನ್ಸೂಚನೆ – ರೈತರು ಮತ್ತು ವ್ಯಾಪಾರಿಗಳಿಗೆ (Vegetable price forecast for farmers and traders)",
   "lang": "kn",
   "start_url": "./index.html",
   "scope": "./",
@@ -10,7 +10,30 @@
   "background_color": "#0E3F2A",
   "theme_color": "#0E3F2A",
   "icons": [
-    {"src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"},
-    {"src": "icon-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable"}
-  ]
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "id": "./"
 }

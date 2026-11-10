@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#F4B01D"/><g transform="translate(76 76) scale(.7)"><path d="M100 360 L190 255 L265 305 L395 150" fill="none" stroke="#0E3F2A" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/><path d="M395 150 C395 75 335 50 285 62 C285 125 325 160 395 150Z" fill="#0E3F2A"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#F4B01D"/><g transform="translate(64 64) scale(.75)"><g>
+  <path d="M206 452 C206 380 206 320 214 262" fill="none" stroke="#0E3F2A" stroke-width="30" stroke-linecap="round"/>
+  <path d="M212 300 C130 302 72 248 64 158 C150 150 210 200 212 300 Z" fill="#0E3F2A"/>
+  <path d="M216 268 C206 170 262 92 356 72 C376 168 316 252 216 268 Z" fill="#1F7A4D"/>
+  <path d="M216 268 C250 200 290 150 340 100" fill="none" stroke="#F4B01D" stroke-width="8" stroke-linecap="round" opacity=".55"/>
+  <circle cx="362" cy="350" r="104" fill="#0E3F2A" stroke="#F4B01D" stroke-width="14"/>
+  <text x="362" y="352" text-anchor="middle" dominant-baseline="central" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="138" fill="#F4B01D">₹</text>
+  <path d="M300 236 L352 196 L404 236" fill="none" stroke="#0E3F2A" stroke-width="0"/>
+</g>
+</g></svg>
