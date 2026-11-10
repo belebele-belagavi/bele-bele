@@ -95,14 +95,20 @@ h1{font-size:30px;font-weight:800}h2{font-size:22px;font-weight:700}h3{font-size
 .inp:has(select:disabled){opacity:.55}
 .msg{font-size:13.5px;min-height:0;display:none;gap:6px;align-items:flex-start;line-height:1.4}
 .msg.show{display:flex}
-.msg.e{color:var(--low)}.msg.w{color:var(--mid)}.msg.i{color:var(--info)}
+.msg.e{color:var(--low)}
+.msg.big{font-size:17px;font-weight:700;line-height:1.5;background:#FDECEA;border-radius:12px;padding:10px 12px;margin-top:8px}.msg.big svg{width:20px;height:20px;margin-top:3px}.msg.w{color:var(--mid)}.msg.i{color:var(--info)}
 .msg svg{width:16px;height:16px;flex:none;margin-top:2px}
 .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:56px;border-radius:16px;background:var(--brand);color:var(--brand-ink);font-weight:700;font-size:18px;font-family:var(--f-d);transition:transform .08s,opacity .2s}
 .btn:active{transform:scale(.98)}
 .btn.mari{background:var(--mari);color:var(--mari-ink)}
 .btn.ghost{background:none;border:2px solid var(--line);color:var(--ink)}
+.btn.regblink{border-color:#F4B01D;animation:regb 1.4s ease-in-out infinite}
+.btn.regblink.hard{animation-duration:.7s}
+@keyframes regb{0%,100%{background:#FFF8E1;border-color:#F4B01D;box-shadow:0 0 0 0 rgba(244,176,29,.0)}50%{background:#F4B01D;border-color:#E09A00;box-shadow:0 0 0 6px rgba(244,176,29,.35)}}
+@media (prefers-reduced-motion:reduce){.btn.regblink{animation:none;background:#F4B01D}}
 .btn.link{background:none;color:var(--brand);min-height:44px;font-size:16px}
 .btn[disabled]{opacity:.45;pointer-events:none}
+.btn.frozen{opacity:.35;filter:grayscale(1);box-shadow:none}
 .btn.busy{opacity:.75;pointer-events:none}
 .btn.busy::before{content:"";width:20px;height:20px;border-radius:50%;border:3px solid currentColor;border-right-color:transparent;animation:spin .7s linear infinite}
 .btn.done{background:var(--good);color:#fff}
@@ -159,6 +165,8 @@ h1{font-size:30px;font-weight:800}h2{font-size:22px;font-weight:700}h3{font-size
 .avatar{width:46px;height:46px;border-radius:50%;background:var(--mari);color:var(--mari-ink);display:grid;place-items:center;font-family:var(--f-d);font-weight:800;font-size:22px;flex:none}
 .who h2{font-size:21px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .who small{color:var(--hdr-mute);display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dh .uname{font-size:22px;line-height:1.3;margin:10px 0 2px;overflow-wrap:anywhere;word-break:break-word}
+.dh .usub{display:block;color:var(--hdr-mute);font-size:13.5px;line-height:1.4}
 .rolepill{margin-top:12px;display:inline-flex;gap:6px;align-items:center;padding:5px 12px;border-radius:16px;background:color-mix(in srgb,var(--hdr-ink) 14%,transparent);font-size:13.5px;font-weight:700}
 .net{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--hdr-mute);margin-left:8px}
 .net i{width:8px;height:8px;border-radius:50%;background:#5AD38E}
@@ -167,6 +175,7 @@ h1{font-size:30px;font-weight:800}h2{font-size:22px;font-weight:700}h3{font-size
 #netbar{position:sticky;top:0;z-index:55}
 .netbar{display:flex;gap:10px;align-items:flex-start;padding:10px 12px 10px 14px;background:color-mix(in srgb,var(--low) 10%,var(--bg));color:var(--low);border-bottom:2px solid var(--low);font-size:14px;line-height:1.45}
 .netbar svg{width:22px;height:22px;flex:none;margin-top:1px}
+.tag2{display:block;margin:14px 0 12px;padding:12px 16px;border-radius:14px;background:#FFF4D6;color:#0E3F2A;font-size:18px;font-weight:800;line-height:1.45;border-left:6px solid #F4B01D;box-shadow:0 6px 18px rgba(0,0,0,.18)}
 .instcard{display:flex;gap:12px;align-items:center;padding:12px;border-radius:16px;background:var(--card);border:1.5px solid var(--line);margin-bottom:14px}
 .instcard .ic{width:48px;height:48px;flex:none;border-radius:12px}.instcard .x{flex:none;color:var(--mute);padding:4px;align-self:flex-start}
 .pendrow{display:flex;gap:8px;align-items:center;padding:8px 12px;background:var(--infobg);color:var(--info);font-size:13.5px;font-weight:700;border-bottom:1px solid var(--line)}
@@ -302,7 +311,7 @@ Up|ಏರಿಕೆ|Rising|वाढ|बढ़त
 Down|ಇಳಿಕೆ|Falling|घट|गिरावट
 Steady|ಸ್ಥಿರ|Steady|स्थिर|स्थिर
 wait|ನೋಂದಣಿ ಸಲ್ಲಿಸಲಾಗಿದೆ. ನಿರ್ವಾಹಕರ ಅನುಮೋದನೆಗೆ ಕಾಯಿರಿ.|Submitted. Wait for admin approval.|नोंदणी सादर केली. प्रशासकाच्या मंजुरीची वाट पहा.|पंजीकरण जमा हो गया। प्रशासक की मंजूरी की प्रतीक्षा करें।
-nouser|ಬಳಕೆದಾರ ಸಿಗಲಿಲ್ಲ|User not found|वापरकर्ता सापडला नाही|उपयोगकर्ता नहीं मिला
+nouser|ನೀವು ಈ ಮೊಬೈಲ್ ನಂಬರ್‌ನಿಂದ ನೋಂದಣಿ ಮಾಡಿಕೊಂಡಿಲ್ಲ. ನೀವು ಮೊದಲು ನೋಂದಣಿ ಮಾಡಿಕೊಳ್ಳಬೇಕು|You have not registered with this mobile number. You must register first|आपण या मोबाईल क्रमांकाने नोंदणी केलेली नाही. आधी नोंदणी करणे आवश्यक आहे|आपने इस मोबाइल नंबर से पंजीकरण नहीं किया है। पहले पंजीकरण करना ज़रूरी है
 saved|ಉಳಿಸಲಾಗಿದೆ|Saved|जतन केले|सहेजा गया
 ac|ಎಕರೆ|Acre|एकर|एकड़
 gu|ಗುಂಟೆ|Guntas|गुंठे|गुंटा
@@ -491,7 +500,7 @@ rebuild|ಗ್ರಾಮವಾರು-ವಾರವಾರು ಆಧಾರ ಡೇಟ
 doneRows|ಸಾಲುಗಳು ನವೀಕರಿಸಲಾಗಿದೆ|Rows updated|ओळी अद्यतनित|पंक्तियां अपडेट हुईं
 wkNote|ವಾರದ ಯಾವುದೇ ದಿನಾಂಕ ಹಾಕಿ. ಗ್ರಾಮದ ಹೆಸರು ಅಥವಾ ALL (ಎಲ್ಲಾ) ಬರೆಯಿರಿ|Use any date in that week. Write the village name or ALL|त्या आठवड्यातील कोणतीही तारीख टाका. गावाचे नाव किंवा ALL लिहा|उस सप्ताह की कोई भी तारीख डालें। गांव का नाम या ALL लिखें
 Tomato|ಟೊಮೆಟೊ|Tomato|टोमॅटो|टमाटर
-tag|ರೈತರಿಗೆ ಉತ್ತಮ, ಸ್ಥಿರ ಬೆಲೆ|Better, steadier prices for farmers|शेतकऱ्यांना चांगला, स्थिर भाव|किसानों को बेहतर, स्थिर भाव
+tag|ನಮ್ಮ ತರಕಾರಿ, ನಮ್ಮ ಬೆಲೆ – ಬಿತ್ತುವ ಮೊದಲೇ ತಿಳಿಯೋಣ|Our vegetables, our price – let's know it before we sow|आपली भाजी, आपला भाव – पेरणीपूर्वीच जाणून घेऊ|हमारी सब्ज़ी, हमारा भाव – बुवाई से पहले ही जानें
 mobHint|ನಿಮ್ಮ 10 ಅಂಕಿಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ|Your 10-digit mobile number|तुमचा १० अंकी मोबाईल क्रमांक|आपका 10 अंकों का मोबाइल नंबर
 newHere|ಹೊಸಬರೇ? ನೋಂದಣಿ ಮಾಡಿ|New here? Register|नवीन आहात? नोंदणी करा|नए हैं? पंजीकरण करें
 lockInfo|ಈ ಖಾತೆ ಈ ಫೋನ್‌ನಲ್ಲಿ ಮಾತ್ರ ತೆರೆಯುತ್ತದೆ|This account opens only on this phone|हे खाते फक्त या फोनवर उघडेल|यह खाता केवल इसी फोन पर खुलेगा
@@ -1040,7 +1049,8 @@ x_instT|ಬೆಳೆ-ಬೆಲೆ ಆಪ್ ಅನ್ನು ಫೋನಿಗೆ �
 x_instWhy|ಮುಖಪುಟದಲ್ಲಿ ಐಕಾನ್ ಬರುತ್ತದೆ; ಒಂದೇ ಒತ್ತಿನಲ್ಲಿ ತೆರೆಯಬಹುದು|An icon appears on your home screen; open it with one tap|होम स्क्रीनवर आयकॉन येईल; एका टॅपमध्ये उघडा|होम स्क्रीन पर आइकन आएगा; एक टैप में खोलें
 x_instIos|Safari ಯಲ್ಲಿ ⬆ (Share) ಒತ್ತಿ → "Add to Home Screen"|In Safari tap ⬆ (Share) → "Add to Home Screen"|Safari मध्ये ⬆ (Share) दाबा → "Add to Home Screen"|Safari में ⬆ (Share) दबाएँ → "Add to Home Screen"
 x_instBtn|ಸೇರಿಸಿ|Install|जोडा|जोड़ें
-x_instDone|ಆಪ್ ಫೋನಿಗೆ ಸೇರಿದೆ. ಮುಖಪುಟದ ಐಕಾನ್‌ನಿಂದ ತೆರೆಯಿರಿ|App added. Open it from the icon on your home screen|ॲप जोडले. होम स्क्रीनवरील आयकॉनमधून उघडा|ऐप जुड़ गया. होम स्क्रीन के आइकन से खोलें`;
+x_instDone|ಆಪ್ ಫೋನಿಗೆ ಸೇರಿದೆ. ಮುಖಪುಟದ ಐಕಾನ್‌ನಿಂದ ತೆರೆಯಿರಿ|App added. Open it from the icon on your home screen|ॲप जोडले. होम स्क्रीनवरील आयकॉनमधून उघडा|ऐप जुड़ गया. होम स्क्रीन के आइकन से खोलें
+tag2|ಇದಕ್ಕಾಗಿ ಸರಿಯಾದ ಮಾಹಿತಿ ನೀಡೋಣ – ಸರಿಯಾದ ಮಾಹಿತಿ ಪಡೆಯೋಣ|For this, let's give the right information – and get the right information|त्यासाठी योग्य माहिती देऊ – योग्य माहिती मिळवू|इसके लिए सही जानकारी दें – सही जानकारी पाएँ`;
 const D = {};
 RAW.split('\n').forEach(l => { if (!l.trim()) return; const p = l.split('|'); D[p[0]] = {kn:p[1], en:p[2], mr:p[3], hi:p[4]}; });
 let LANG = 'kn';
@@ -1689,7 +1699,7 @@ function installCard(){ if (isStandalone() || store.get('bb_installed') || store
 function vLogin(){
   const L = S.login;
   return `<div class="hero pad"><div class="top"><div class="brand">${logoSvg}<span>${t('x_appName')}</span></div>${langBar()}</div>
-  <h1>${t('tag')}</h1><p>${t('fc')} · ${Object.keys(CROPS).map(c=>t(c)).join(', ')}</p>${art()}</div>
+  <h1>${t('tag')}</h1><div class="tag2">${t('tag2')}</div>${art()}</div>
   <div class="sheetcard pad">${installCard()}
   ${L.needCode ? `<h2>${t('x_verify')}</h2><p class="mute sm" style="margin:6px 0 14px">${t('actPrompt')}</p>
     <div class="codeboxes" id="codeb">${[0,1,2,3,4,5].map(i=>`<input inputmode="numeric" maxlength="1" data-i="cd" data-n="${i}" aria-label="${t('x_code')} ${i+1}">`).join('')}</div>
@@ -1700,13 +1710,13 @@ function vLogin(){
     ${field('mob', t('mobile'), `<input id="mob" data-i="mob" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="9XXXXXXXXX" value="${esc(L.mobile)}">`, {pre:'+91', tick:true})}
     ${btn(t('login'),'login','','id="bLogin"')}
     <div class="lockline">${svg('lock')}<span>${t('lockInfo')}</span></div>
-    ${btn(t('newHere'),'toReg','ghost')}
+    ${btn(t('newHere'),'toReg','ghost regblink','id="bReg"')}
     ${REAL?'':`<div class="demo">${t('x_try')}: <b>9000000001</b> · <b>9000000002</b> · <b>9000000011</b></div>`}`}
   </div>`;
 }
 function bindLogin(){ const m = $('#mob'); if (m) { liveMob(m); m.focus(); } const cb = $('#codeb'); if (cb) { const ins = [...cb.querySelectorAll('input')]; ins.forEach((el,i) => { el.addEventListener('input', () => { el.value = el.value.replace(/\D/g,''); if (el.value && ins[i+1]) ins[i+1].focus(); if (ins.every(x=>x.value)) doVerify(); }); el.addEventListener('keydown', e => { if (e.key==='Backspace' && !el.value && ins[i-1]) ins[i-1].focus(); }); }); ins[0].focus(); } }
 function liveMob(el){ const run = () => { el.value = el.value.replace(/\D/g,'').slice(0,10); const v = el.value; const f = $('#f_mob'); f.classList.toggle('ok', mobOK(v)); if (!v) setMsg('mob','',''); else if (v.length===10 && !mobOK(v)) setMsg('mob','e',t('e_mobile')); else if (v.length<10) setMsg('mob','i', (10-v.length)+' / 10'); else setMsg('mob','',''); };
-  el.addEventListener('input', () => { S.login.mobile = el.value; S.reg.mobile = el.value; run(); }); run(); }
+  el.addEventListener('input', () => { S.login.mobile = el.value; S.reg.mobile = el.value; const lb=$('#bLogin'); if (lb && lb.classList.contains('frozen')){ lb.disabled = false; lb.classList.remove('frozen'); } const b=$('#bReg'); if (b) b.classList.remove('hard'); run(); }); run(); }
 async function doLogin(el){
   const m = S.login.mobile;
   if (!mobOK(m)) { setMsg('mob','e',t('e_mobile')); $('#mob').focus(); return; }
@@ -1724,7 +1734,7 @@ async function doVerify(){
   afterLogin(r);
 }
 function afterLogin(r){
-  if (r.err==='nouser') { setMsg('mob','e',t('nouser')); return; }
+  if (r.err==='nouser') { setMsg('mob','e',t('nouser')); $('#m_mob').classList.add('big'); const lb=$('#bLogin'); if (lb){ lb.disabled = true; lb.classList.add('frozen'); } const b=$('#bReg'); if (b){ b.classList.add('hard'); b.scrollIntoView({block:'nearest',behavior:'smooth'}); } return; }
   if (r.err==='pending') { toast(t('pend'),'bad'); return; }
   S.user = r.user; S.login.needCode = false; store.set('session', {mobile:r.user.mobile}); store.set('bb_out', false);
   if (r.user.roles.length>1) { S.screen = 'chooser'; } else { S.role = r.user.roles[0]; enterHome(); return; }
@@ -1837,7 +1847,7 @@ const gAcgu = g => acgu({acre:Math.floor(g/40), gunta:g%40});
 function homeHead(){ return homeHead0(); }
 function homeHead0(){
   const u = S.user;
-  return `<div class="dh pad"><div class="row"><div class="who"><div class="avatar">${esc(initial(u.name))}</div><div style="min-width:0"><small style="margin:0 0 -2px">${t('hello')}</small><h2>${esc(u.name.split(' ')[0])}</h2><small>${esc(pnm(u.village||''))}${u.taluk?' · '+esc(pnm(u.taluk)):''}</small></div></div>${langBar()}</div>
+  return `<div class="dh pad"><div class="row"><div class="who"><div class="avatar">${esc(initial(u.name))}</div><small style="margin:0;font-size:15px">${t('hello')}</small></div>${langBar()}</div><h2 class="uname">${esc(u.name)}</h2><small class="usub">${esc(pnm(u.village||''))}${u.taluk?' · '+esc(pnm(u.taluk)):''}${u.mobile?' · 📱 ••••'+esc(String(u.mobile).slice(-4)):''}</small>
    <div><span class="rolepill">${svg(ROLEIC[S.role],'width="16" height="16"')}${t(S.role)}${u.roles.length>1?` <button data-a="switch" style="text-decoration:underline;color:inherit;font-size:13px">⇄</button>`:''}</span><span class="net ${NET.st}" id="net"><i></i>${netText()}</span></div></div>`;
 }
 function priceCard(){
